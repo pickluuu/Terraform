@@ -17,7 +17,7 @@ provider "aws" {
   alias  = "us-east"
 }
 
-resource "aws-s3_bucket" "eu_west1" {
+resource "aws_s3_bucket" "eu_west1" {
   bucket = "some-random-bucket-name-aosdhfoadhfu"
 }
 
