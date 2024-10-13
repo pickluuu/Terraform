@@ -3,7 +3,7 @@ resource "aws_instance" "web" {
   associate_public_ip_address = true
   instance_type               = "t4g.micro"
   subnet_id                   = aws_subnet.public_subnet.id
-  vpc_security_group_ids      = [aws_security_group_ingress_rule.public_http_traffic.id]
+  vpc_security_group_ids      = [aws_security_group.public_http_traffic.id]
 
   root_block_device {
     delete_on_termination = true
