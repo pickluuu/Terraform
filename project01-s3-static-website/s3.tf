@@ -47,7 +47,7 @@ resource "aws_s3_bucket_website_configuration" "static_website" {
 
 resource "aws_s3_object" "index_html" {
   bucket       = aws_s3_bucket.static_website.id
-  key          = index.html
+  key          = "index.html"
   source       = "project01-s3-static-website"
   etag         = filemd5("project01-s3-static-website/index.html")
   content_type = "text/html"
@@ -55,7 +55,7 @@ resource "aws_s3_object" "index_html" {
 
 resource "aws_s3_object" "error_html" {
   bucket       = aws_s3_bucket.static_website.id
-  key          = error.html
+  key          = "error.html"
   source       = "project01-s3-static-website"
   etag         = filemd5("project01-s3-static-website/error.html")
   content_type = "text/html"
