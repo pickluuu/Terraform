@@ -16,6 +16,11 @@ resource "aws_instance" "web" {
   source_dest_check           = true
   user_data_replace_on_change = true
 
+  depends_on = [
+    aws_subnet.public_subnet,
+    aws_security_group.public_http_traffic
+  ]
+
 }
 
 resource "aws_security_group" "public_http_traffic" {
