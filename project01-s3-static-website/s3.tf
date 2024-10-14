@@ -27,7 +27,7 @@ resource "aws_s3_bucket_policy" "static_website" {
         Effect    = "Allow"
         Principal = "*"
         Action    = "s3:GetObject"
-        Resource  = "${aws_s3_buckt.static_website.arn}/*"
+        Resource  = "${aws_s3_bucket.static_website.arn}/*"
       }
     ]
   })
