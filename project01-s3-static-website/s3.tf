@@ -13,4 +13,22 @@ resource "aws_s3_bucket_public_access_block" "static_website" {
   block_public_policy     = false
   ignore_public_acls      = false
   restrict_public_buckets = false
+
 }
+
+resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
+  bucket = aws_s3_bucket.static_website.id
+
+  policy = jsondecode({
+    version = "2024-10-14"
+    Statement = [
+      {
+        Sid       = "PublicReadGetObject"
+        Effect    = "Allow"
+        Principal = "*"
+        Action    = "s3:GetObject"
+        Resource  = "${aws_s3_buckt.static_website.arn}/*"
+      }
+    ]
+  })
+}  
