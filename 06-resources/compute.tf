@@ -10,6 +10,13 @@ resource "aws_instance" "web" {
     volume_size           = 10
     volume_type           = "gp3"
   }
+
+  depends_on = [
+    aws_subnet.public_subnet,
+    aws_security_group.public_http_traffic,
+    aws_internet_gateway.igw,
+    aws_route_table_association.public_route
+  ]
 }
 
 resource "aws_security_group" "public_http_traffic" {
