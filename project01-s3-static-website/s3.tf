@@ -60,3 +60,7 @@ resource "aws_s3_object" "error_html" {
   etag         = filemd5("error.html")
   content_type = "text/html"
 }
+
+output "static_website_endpoint" {
+  value = aws_s3_bucket_website_configuration.static_website.website_endpoint
+}
