@@ -1,10 +1,11 @@
 Deploy an S3 bucket that will host the files for the static website. (Done)
 Create an index.html file and an error.html file containing some dummy text.
 Hint: Here is a source where you can find a basic template.
-In a first moment, upload these files manually to the bucket via the AWS console. They should be placed in the root directory of the bucket. Later we will upload these files via Terraform.
+(https://ryanstutorials.net/html-tutorial/html-template.php)
+In a first moment, upload these files manually to the bucket via the AWS console. They should be placed in the root directory of the bucket. Later we will upload these files via Terraform. (Done)
 Disable public access block so that others can access the bucket via the internet. (Done)
 Create a policy that allows the s3:GetObject action for anyone and for all objects within the created bucket. (Done)
-Create an S3 static website configuration, and link it to the existing bucket.
+Create an S3 static website configuration, and link it to the existing bucket. (Done)
 Create an output with the S3 Static Website endpoint.
 After testing that you can access the website via the internet, let's now update the files via Terraform.
 Delete the files from the S3 bucket.
