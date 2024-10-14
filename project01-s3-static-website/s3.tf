@@ -20,7 +20,7 @@ resource "aws_s3_bucket_policy" "static_website" {
   bucket = aws_s3_bucket.static_website.id
 
   policy = jsonencode({
-    Version = "2024-10-14"
+    Version = "2012-10-17"
     Statement = [
       {
         Sid       = "PublicReadGetObject"
