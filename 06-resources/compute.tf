@@ -5,18 +5,17 @@ resource "aws_instance" "web" {
   subnet_id                   = aws_subnet.public_subnet.id
   vpc_security_group_ids      = [aws_security_group.public_http_traffic.id]
 
+
   root_block_device {
     delete_on_termination = true
     volume_size           = 10
     volume_type           = "gp3"
   }
 
-  depends_on = [
-    aws_subnet.public_subnet,
-    aws_security_group.public_http_traffic,
-    aws_internet_gateway.igw,
-    aws_route_table_association.public_route
-  ]
+  # Fixing attribute issues
+  source_dest_check           = true
+  user_data_replace_on_change = true
+
 }
 
 resource "aws_security_group" "public_http_traffic" {
