@@ -19,8 +19,8 @@ resource "aws_s3_bucket_public_access_block" "static_website" {
 resource "aws_s3_bucket_policy" "static_website" {
   bucket = aws_s3_bucket.static_website.id
 
-  policy = jsondecode({
-    version = "2024-10-14"
+  policy = jsonencode({
+    Version = "2024-10-14"
     Statement = [
       {
         Sid       = "PublicReadGetObject"
