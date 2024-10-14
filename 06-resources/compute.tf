@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami                         = "ami-0e1335a4a4a3d8f5b"
+  ami                         = "ami-0de3736b2ee1b8978"
   associate_public_ip_address = true
   instance_type               = "t3a.small"
   subnet_id                   = aws_subnet.public_subnet.id
