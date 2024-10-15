@@ -25,7 +25,7 @@ output "ubuntu_ami_data" {
 }
 
 output "aws_caller_identity" {
-  value = data.aws_caller_identity.ubuntu.id
+  value = data.aws_caller_identity.id
 }
 
 # output "aws_region" {
