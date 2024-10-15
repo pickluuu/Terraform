@@ -2,6 +2,7 @@ data "aws_ami" "ubuntu" {
 
   most_recent = true
   owners      = ["099720109477"] # Owner is canonical
+  provider    = "us-west-1"
 
   filter {
     name   = "name"
@@ -14,10 +15,6 @@ data "aws_ami" "ubuntu" {
   }
 }
 
-provider "aws" {
-  region = "eu-west-1"
-
-}
 output "ubuntu_ami_data" {
   value = data.aws_ami.ubuntu
 }
