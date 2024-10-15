@@ -26,7 +26,5 @@ resource "aws_instance" "compute" {
   }
 }
 
-provider "aws" {
-  region = "eu-west-1"
-}
+
 
