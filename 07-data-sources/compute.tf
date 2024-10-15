@@ -15,8 +15,21 @@ data "aws_ami" "ubuntu" {
   }
 }
 
+data "aws_caller_identity" "current" {}
+
+data "aws_region" "current" {}
+
+
 output "ubuntu_ami_data" {
   value = data.aws_ami.ubuntu
+}
+
+output "aws_caller_identity" {
+  value = data.aws_caller_identity.ubuntu.id
+}
+
+output "aws_region" {
+  value = data.aws_region.ubuntu.id
 }
 
 
