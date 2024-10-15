@@ -20,8 +20,8 @@ resource "aws_instance" "compute" {
 
   root_block_device {
     delete_on_termination = true
-    volume_size           = 10
-    volume_type           = "gp3"
+    volume_size           = var.ec2_volume_size
+    volume_type           = var.ec2_volume_type
   }
 }
 
