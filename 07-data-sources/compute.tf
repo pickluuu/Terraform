@@ -18,7 +18,7 @@ data "aws_ami" "ubuntu" {
 
 data "aws_vpc" "this" {
   tags = {
-    Env = Prod
+    Env = "Prod"
   }
 }
 
