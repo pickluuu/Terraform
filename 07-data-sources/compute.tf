@@ -15,10 +15,21 @@ data "aws_ami" "ubuntu" {
   }
 }
 
+
+data "aws_vpc" "this" {
+  tags = {
+    Env = Prod
+  }
+}
+
 data "aws_caller_identity" "current" {}
 
 data "aws_region" "current" {}
 
+
+output "aws_vpc" {
+  value = data.aws_vpc.this.id
+}
 
 output "ubuntu_ami_data" {
   value = data.aws_ami.ubuntu
