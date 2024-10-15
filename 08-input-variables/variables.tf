@@ -12,13 +12,29 @@ variable "ec2_instance_type" {
   }
 }
 
-variable "ec2_volume_type" {
-  type    = string
-  default = "gp3"
+# variable "ec2_volume_type" {
+#   type    = string
+#   default = "gp3"
+# }
+
+# variable "ec2_volume_size" {
+#   type    = number
+#   default = 10
+# }
+
+variable "ec2_volume_config" {
+  type = object({
+    size = number
+    type = string
+  })
+
+  default = {
+    size = 10
+    type = "gp3"
+  }
 }
 
-variable "ec2_volume_size" {
-  type    = number
-  default = 10
-
+variable "additional_tags" {
+  type    = map(string)
+  default = {}
 }
