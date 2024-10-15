@@ -14,7 +14,7 @@ variable "ec2_instance_type" {
 
 variable "ec2_volume_type" {
   type    = string
-  default = gp3
+  default = "gp3"
 }
 
 variable "ec2_volume_size" {
