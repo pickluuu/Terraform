@@ -4,7 +4,7 @@
 
 variable "ec2_instance_type" {
   type    = string
-  default = ""
+  default = "t3.medium"
 
   validation {
     condition     = contains(["t2.micro", "t2.small", "t2.medium"], var.ec2_instance_type)
