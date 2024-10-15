@@ -2,7 +2,7 @@ data "aws_ami" "ubuntu" {
 
   most_recent = true
   owners      = ["099720109477"] # Owner is canonical
-  provider    = aws.us-west-1
+  provider    = aws.eu-west-1
 
   filter {
     name   = "name"
